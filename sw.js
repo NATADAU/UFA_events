@@ -1,10 +1,10 @@
-const CACHE = "bashkortostan-2026-v1";
+const CACHE = "bashkortostan-2026-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./images/icon-192.png",
-  "./images/icon-512.png"
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
