@@ -1,0 +1,26 @@
+{
+  "name": "Башкортостан — экспертные визиты 2026",
+  "short_name": "Башкортостан",
+  "description": "Экспертные визиты, семинар и встреча с родителями в Республике Башкортостан. Август 2026.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eee7d8",
+  "theme_color": "#eee7d8",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
