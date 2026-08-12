@@ -1,4 +1,4 @@
-const CACHE = "bashkortostan-2026-v4";
+﻿const CACHE = "bashkortostan-2026-v5";
 const ASSETS = [
   "./",
   "./index.html",

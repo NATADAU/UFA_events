@@ -313,39 +313,20 @@
     .hero-title {
       margin: 0;
 
-      transform:
-        translateX(-0.05em);
+      max-width: 12ch;
 
       font-size:
-        clamp(72px, 11vw, 168px);
+        clamp(52px, 8.5vw, 118px);
 
-      line-height: 0.72;
+      line-height: 0.92;
 
-      letter-spacing: -0.095em;
+      letter-spacing: -0.06em;
 
       font-weight: 900;
 
       text-transform: uppercase;
-    }
-
-
-    .hero-title span {
-      display: block;
-    }
-
-
-    .hero-title .soft {
-      color: var(--coral);
-
-      font-family:
-        "PT Serif",
-        Georgia,
-        serif;
-
-      font-style: italic;
-      font-weight: 400;
-
-      letter-spacing: -0.075em;
+      hyphens: none;
+      word-break: keep-all;
     }
 
 
@@ -1555,7 +1536,9 @@
 
       .hero-title {
         font-size:
-          clamp(70px, 21vw, 145px);
+          clamp(48px, 12vw, 96px);
+
+        max-width: none;
       }
 
 
@@ -1704,9 +1687,11 @@
 
       .hero-title {
         font-size:
-          clamp(63px, 22.7vw, 105px);
+          clamp(42px, 13vw, 72px);
 
-        line-height: 0.75;
+        line-height: 0.95;
+
+        max-width: none;
       }
 
 
@@ -2038,19 +2023,7 @@
     <div>
 
       <h1 class="hero-title reveal">
-
-        <span>
-          Баш
-        </span>
-
-        <span class="soft">
-          корто
-        </span>
-
-        <span>
-          стан
-        </span>
-
+        Башкортостан
       </h1>
 
 
