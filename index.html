@@ -455,14 +455,35 @@
 
       background: var(--yellow);
 
-      transform: rotate(8deg);
-
       font-size: 13px;
       font-weight: 800;
       line-height: 1.05;
 
       text-align: center;
       text-transform: uppercase;
+
+      opacity: 0;
+
+      transform:
+        rotate(18deg)
+        scale(0.72);
+
+      transition:
+        opacity 0.7s
+        cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.85s
+        cubic-bezier(0.34, 1.4, 0.64, 1);
+    }
+
+
+    .hero-photo-wrap.visible .stamp {
+      opacity: 1;
+
+      transform:
+        rotate(8deg)
+        scale(1);
+
+      transition-delay: 0.35s;
     }
 
 
@@ -1565,20 +1586,130 @@
       opacity: 0;
 
       transform:
-        translateY(24px);
+        translateY(32px);
 
       transition:
-        opacity 0.75s
-        cubic-bezier(.2,.7,.2,1),
+        opacity 0.95s
+        cubic-bezier(0.16, 1, 0.3, 1),
 
-        transform 0.75s
-        cubic-bezier(.2,.7,.2,1);
+        transform 0.95s
+        cubic-bezier(0.16, 1, 0.3, 1);
     }
 
 
     .reveal.visible {
       opacity: 1;
       transform: none;
+    }
+
+
+    .hero-meta.reveal {
+      transform: translateY(18px);
+      transition-delay: 0.08s;
+    }
+
+
+    .hero-title.reveal {
+      transform: translateY(28px);
+      transition-delay: 0.22s;
+    }
+
+
+    .hero-photo-wrap.reveal {
+      transform:
+        translateY(40px)
+        scale(0.985);
+
+      transition-delay: 0.36s;
+      transition-duration: 1.15s;
+    }
+
+
+    .section-head.reveal {
+      transform: translateY(40px);
+    }
+
+
+    .reveal-media img,
+    .reveal-media .hero-photo,
+    .route-card.reveal .route-photo img,
+    .session.reveal .session-photo img,
+    .parents-photo-main.reveal img,
+    .parents-photo-side.reveal img,
+    .people-main.reveal img,
+    .meeting-photo.reveal img,
+    .journal-photo.reveal img {
+      transform: scale(1.06);
+
+      transform-origin: center;
+
+      transition:
+        transform 1.35s
+        cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+
+    .reveal-media.visible img,
+    .reveal-media.visible .hero-photo,
+    .route-card.reveal.visible .route-photo img,
+    .session.reveal.visible .session-photo img,
+    .parents-photo-main.reveal.visible img,
+    .parents-photo-side.reveal.visible img,
+    .people-main.reveal.visible img,
+    .meeting-photo.reveal.visible img,
+    .journal-photo.reveal.visible img {
+      transform: scale(1);
+    }
+
+
+    .route-card.reveal:nth-child(odd) {
+      transform:
+        translate(-28px, 28px);
+    }
+
+
+    .route-card.reveal:nth-child(even) {
+      transform:
+        translate(28px, 28px);
+    }
+
+
+    .focus-item.reveal:nth-child(1) { transition-delay: 0.02s; }
+    .focus-item.reveal:nth-child(2) { transition-delay: 0.1s; }
+    .focus-item.reveal:nth-child(3) { transition-delay: 0.18s; }
+    .focus-item.reveal:nth-child(4) { transition-delay: 0.26s; }
+    .focus-item.reveal:nth-child(5) { transition-delay: 0.34s; }
+    .focus-item.reveal:nth-child(6) { transition-delay: 0.42s; }
+
+
+    .triptych .photo.reveal:nth-child(1) { transition-delay: 0.04s; }
+    .triptych .photo.reveal:nth-child(2) { transition-delay: 0.14s; }
+    .triptych .photo.reveal:nth-child(3) { transition-delay: 0.24s; }
+
+
+    .session.reveal:nth-child(odd) {
+      transform:
+        translate(-20px, 28px);
+    }
+
+
+    .session.reveal:nth-child(even) {
+      transform:
+        translate(20px, 28px);
+    }
+
+
+    .big-quote-text.reveal {
+      transform:
+        translateY(48px)
+        scale(0.985);
+
+      transition-duration: 1.15s;
+    }
+
+
+    .closing-text .reveal {
+      transition-duration: 1.1s;
     }
 
 
@@ -2090,6 +2221,14 @@
           calc(18px + env(safe-area-inset-bottom));
       }
 
+
+      .route-card.reveal:nth-child(odd),
+      .route-card.reveal:nth-child(even),
+      .session.reveal:nth-child(odd),
+      .session.reveal:nth-child(even) {
+        transform: translateY(28px);
+      }
+
     }
 
 
@@ -2108,8 +2247,46 @@
       }
 
 
-      .reveal {
+      .reveal,
+      .reveal.visible,
+      .route-card.reveal:nth-child(odd),
+      .route-card.reveal:nth-child(even),
+      .session.reveal:nth-child(odd),
+      .session.reveal:nth-child(even),
+      .hero-photo-wrap.reveal,
+      .big-quote-text.reveal {
         opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+
+      .stamp,
+      .hero-photo-wrap.visible .stamp {
+        opacity: 1;
+        transform: rotate(8deg) scale(1);
+        transition: none;
+      }
+
+
+      .reveal-media img,
+      .reveal-media .hero-photo,
+      .reveal-media.visible img,
+      .reveal-media.visible .hero-photo,
+      .route-card.reveal .route-photo img,
+      .route-card.reveal.visible .route-photo img,
+      .session.reveal .session-photo img,
+      .session.reveal.visible .session-photo img,
+      .parents-photo-main.reveal img,
+      .parents-photo-main.reveal.visible img,
+      .parents-photo-side.reveal img,
+      .parents-photo-side.reveal.visible img,
+      .people-main.reveal img,
+      .people-main.reveal.visible img,
+      .meeting-photo.reveal img,
+      .meeting-photo.reveal.visible img,
+      .journal-photo.reveal img,
+      .journal-photo.reveal.visible img {
         transform: none;
         transition: none;
       }
@@ -2227,7 +2404,7 @@
 
 
 
-  <div class="hero-photo-wrap reveal">
+  <div class="hero-photo-wrap reveal reveal-media">
 
             <img
           class="hero-photo"
@@ -2465,7 +2642,7 @@
 <div class="triptych">
 
 
-  <figure class="photo reveal">
+  <figure class="photo reveal reveal-media">
 
             <img
           src="17-place.jpg"
@@ -2484,7 +2661,7 @@
 
 
 
-  <figure class="photo reveal">
+  <figure class="photo reveal reveal-media">
 
             <img
           src="18-morning-evening.jpg"
@@ -2503,7 +2680,7 @@
 
 
 
-  <figure class="photo reveal">
+  <figure class="photo reveal reveal-media">
 
             <img
           src="20-bashkortostan.jpg"
@@ -2534,7 +2711,7 @@
 >
 
 
-  <div class="section-head">
+  <div class="section-head reveal">
 
     <div class="section-num">
       01 / маршрут
@@ -2776,7 +2953,7 @@
 >
 
 
-  <div class="section-head">
+  <div class="section-head reveal">
 
     <div class="section-num">
       02 / смотрели
@@ -2954,7 +3131,7 @@
 >
 
 
-  <div class="section-head">
+  <div class="section-head reveal">
 
     <div class="section-num">
       03 / семинар
@@ -3284,7 +3461,7 @@
   <div class="seminar-photos">
 
 
-    <figure class="photo reveal">
+    <figure class="photo reveal reveal-media">
 
               <img
           src="13-seminar-06.jpg"
@@ -3302,7 +3479,7 @@
     </figure>
 
 
-    <figure class="photo reveal">
+    <figure class="photo reveal reveal-media">
 
               <img
           src="16-seminar-wide.jpg"
@@ -3367,7 +3544,7 @@
 >
 
 
-  <div class="section-head">
+  <div class="section-head reveal">
 
     <div class="section-num">
       04 / встреча
@@ -3425,7 +3602,7 @@
   <div class="parents-gallery">
 
 
-    <figure class="parents-photo-main reveal">
+    <figure class="parents-photo-main reveal reveal-media">
 
               <img
           src="21-parents.jpg"
@@ -3444,7 +3621,7 @@
 
 
 
-    <figure class="parents-photo-side reveal">
+    <figure class="parents-photo-side reveal reveal-media">
 
               <img
           src="22-parents-02.jpg"
@@ -3501,7 +3678,7 @@
 >
 
 
-  <div class="section-head">
+  <div class="section-head reveal">
 
     <div class="section-num">
       05 / люди
@@ -3529,7 +3706,7 @@
   <div class="people-grid">
 
 
-    <figure class="people-main reveal">
+    <figure class="people-main reveal reveal-media">
 
               <img
           src="15-team.jpg"
@@ -3571,7 +3748,7 @@
 
 
 
-      <figure class="meeting-photo reveal">
+      <figure class="meeting-photo reveal reveal-media">
 
                 <img
           src="14-meeting.jpg"
@@ -3606,7 +3783,7 @@
   <div class="section-pad journal-head">
 
     <div
-      class="section-head"
+      class="section-head reveal"
       style="margin-bottom:0"
     >
 
@@ -3636,7 +3813,7 @@
   <div class="journal-grid">
 
 
-    <figure class="journal-photo reveal">
+    <figure class="journal-photo reveal reveal-media">
 
               <img
           src="19-team-life.jpg"
@@ -3774,6 +3951,12 @@
 
 <script>
 
+  const reduceMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
   const items =
     document.querySelectorAll(
       ".reveal"
@@ -3781,8 +3964,8 @@
 
 
   if (
-    "IntersectionObserver"
-    in window
+    !reduceMotion
+    && "IntersectionObserver" in window
   ) {
 
 
@@ -3823,7 +4006,8 @@
         },
 
         {
-          threshold: 0.12
+          threshold: 0.14,
+          rootMargin: "0px 0px -6% 0px"
         }
 
       );
