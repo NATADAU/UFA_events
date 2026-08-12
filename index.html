@@ -2,110 +2,93 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    content="width=device-width, initial-scale=1.0"
   >
-
   <title>
     Башкортостан — экспертные визиты и семинар
   </title>
-
   <meta
     name="description"
     content="Экспертные визиты, семинар и встреча с родителями в Республике Башкортостан. Август 2026."
   >
-
-  <meta name="theme-color" content="#eee7d8">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Башкортостан">
-  <meta name="format-detection" content="telephone=no">
-
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-
   <!--
   ============================================================
-
-  ПАПКА С ФОТОГРАФИЯМИ (оптимизированные JPG)
-
-  
+  ПАПКА С ФОТОГРАФИЯМИ
 
   01-hero.jpg
-  02-kumertau.jpg … 07-imenlek.jpg
-  08-seminar-01.jpg … 13-seminar-06.jpg
-  14-meeting.jpg, 15-team.jpg, 16-seminar-wide.jpg
-  17-place.jpg, 18-morning-evening.jpg,
-  19-team-life.jpg, 20-bashkortostan.jpg
-  21-parents.jpg, 22-parents-02.jpg
-
-  Оригиналы лежат в папке «фото/».
-  Каждое фото на странице используется один раз.
-
+  02-kumertau.jpg
+  03-ishimbay.jpg
+  04-serafimovsky.jpg
+  05-verhnetroitsky.jpg
+  06-buzdyak.jpg
+  07-imenlek.jpg
+  08-seminar-01.jpg
+  09-seminar-02.jpg
+  10-seminar-03.jpg
+  11-seminar-04.jpg
+  12-seminar-05.jpg
+  13-seminar-06.jpg
+  14-meeting.jpg
+  15-team.jpg
+  16-seminar-wide.jpg
+  17-place.jpg
+  18-morning-evening.jpg
+  19-team-life.jpg
+  20-bashkortostan.jpg
+  21-parents.jpg
+  22-parents-02.jpg
+  Фотографии могут быть вертикальными.
+  Лучше всего 3:4 или 4:5.
   ============================================================
   -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link
     rel="preconnect"
     href="https://fonts.gstatic.com"
     crossorigin
   >
-
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=PT+Serif:ital@0;1&display=swap"
     rel="stylesheet"
   >
-
-
   <style>
-
     :root {
-      --paper: #eee7d8;
-      --paper-light: #f7f2e8;
-
-      --ink: #181815;
-      --muted: #6b675f;
-
-      --coral: #f15b43;
-      --blue: #4857c8;
-      --green: #64764b;
-      --yellow: #e7bd45;
-
+      --paper: 
+#eee7d8;
+      --paper-light: 
+#f7f2e8;
+      --ink: 
+#181815;
+      --muted: 
+#6b675f;
+      --coral: 
+#f15b43;
+      --blue: 
+#4857c8;
+      --green: 
+#64764b;
+      --yellow: 
+#e7bd45;
       --line: rgba(24, 24, 21, 0.22);
-
       --max-width: 1440px;
-
       --pad: clamp(18px, 3.4vw, 56px);
     }
-
-
     * {
       box-sizing: border-box;
     }
-
-
     html {
       scroll-behavior: smooth;
       background: var(--paper);
     }
-
-
     body {
       margin: 0;
-
       color: var(--ink);
-
       font-family:
         "Inter",
         Arial,
         sans-serif;
-
       background:
         radial-gradient(
           circle at 14% 3%,
@@ -118,2619 +101,1603 @@
           transparent 27rem
         ),
         var(--paper);
-
       overflow-x: hidden;
-
-      -webkit-tap-highlight-color: transparent;
-
-      padding-left: env(safe-area-inset-left);
-      padding-right: env(safe-area-inset-right);
     }
-
-
     ::selection {
       color: var(--paper);
       background: var(--ink);
     }
-
-
     img {
       display: block;
       width: 100%;
     }
-
-
     figure {
       margin: 0;
     }
-
-
     a {
       color: inherit;
       text-decoration: none;
     }
-
-
     .page {
       width: min(100%, var(--max-width));
       margin-inline: auto;
     }
-
-
     .serif {
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-weight: 400;
     }
-
-
     .italic {
       font-style: italic;
     }
-
-
     /* ========================================================
        TOP BAR
        ======================================================== */
-
     .topbar {
       position: sticky;
       top: 0;
       z-index: 100;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
-
       gap: 24px;
-
-      padding:
-        calc(14px + env(safe-area-inset-top))
-        var(--pad)
-        14px;
-
+      padding: 14px var(--pad);
       border-bottom:
         1px solid var(--line);
-
       background:
         rgba(238, 231, 216, 0.90);
-
       backdrop-filter: blur(14px);
     }
-
-
     .brand {
       font-size: 13px;
       font-weight: 800;
       letter-spacing: -0.025em;
       white-space: nowrap;
     }
-
-
     .nav {
       display: flex;
-
       gap:
         clamp(14px, 2vw, 30px);
-
       font-size: 12px;
       font-weight: 600;
     }
-
-
     .nav a {
       position: relative;
     }
-
-
     .nav a::after {
       content: "";
-
       position: absolute;
-
       left: 0;
       right: 100%;
       bottom: -4px;
-
       height: 1px;
-
       background: currentColor;
-
       transition:
         right 0.25s ease;
     }
-
-
     .nav a:hover::after {
       right: 0;
     }
-
-
-
     /* ========================================================
        HERO
        ======================================================== */
-
     .hero {
       position: relative;
-
       min-height:
         calc(100svh - 48px);
-
       padding:
         clamp(34px, 5vw, 74px)
         var(--pad)
         34px;
-
       display: grid;
-
       grid-template-columns:
         minmax(0, 1.5fr)
         minmax(260px, 0.72fr);
-
       gap:
         clamp(30px, 5vw, 84px);
-
       align-items: end;
-
       overflow: hidden;
     }
-
-
     .hero-left {
       position: relative;
       z-index: 2;
-
       align-self: stretch;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-
-
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-
       gap: 10px 28px;
-
       padding-bottom: 34px;
-
       font-size:
         clamp(12px, 1vw, 15px);
-
       line-height: 1.3;
       font-weight: 600;
     }
-
-
     .hero-title {
       margin: 0;
-
       transform:
         translateX(-0.05em);
-
       font-size:
         clamp(76px, 12vw, 184px);
-
       line-height: 0.72;
-
       letter-spacing: -0.095em;
-
       font-weight: 900;
-
       text-transform: uppercase;
     }
-
-
     .hero-title span {
       display: block;
     }
-
-
     .hero-title .soft {
       color: var(--coral);
-
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-style: italic;
       font-weight: 400;
-
       letter-spacing: -0.075em;
     }
-
-
     .hero-caption {
       max-width: 760px;
-
       margin-top:
         clamp(30px, 4vw, 60px);
-
       font-size:
         clamp(19px, 2vw, 31px);
-
       line-height: 1.07;
       letter-spacing: -0.035em;
     }
-
-
     .hero-photo-wrap {
       position: relative;
-
       align-self: center;
       justify-self: end;
-
       width: min(100%, 430px);
-
       padding-bottom: 44px;
     }
-
-
     .hero-photo {
       aspect-ratio: 3 / 4;
-
       object-fit: cover;
-
       filter:
         saturate(0.92)
         contrast(0.98);
     }
-
-
     .stamp {
       position: absolute;
-
       right: -22px;
       bottom: 14px;
-
       width: 128px;
       height: 128px;
-
       display: grid;
       place-items: center;
-
       border:
         2px solid var(--ink);
-
       border-radius: 50%;
-
       background: var(--yellow);
-
       transform: rotate(8deg);
-
       font-size: 13px;
       font-weight: 800;
       line-height: 1.05;
-
       text-align: center;
       text-transform: uppercase;
     }
-
-
     .scribble {
       position: absolute;
-
       left: 54%;
       top: 7%;
-
       width: 160px;
-
       transform: rotate(-12deg);
-
       pointer-events: none;
     }
-
-
-
     /* ========================================================
        RUNNING LINE
        ======================================================== */
-
     .marquee {
       overflow: hidden;
-
       border-top:
         1px solid var(--line);
-
       border-bottom:
         1px solid var(--line);
-
       background: var(--yellow);
     }
-
-
     .marquee-track {
       display: flex;
-
       width: max-content;
-
       animation:
         marquee 28s linear infinite;
     }
-
-
     .marquee-item {
       padding: 15px 18px;
-
       white-space: nowrap;
-
       font-size: 14px;
       font-weight: 800;
-
       text-transform: uppercase;
     }
-
-
     .marquee-item::after {
       content: "✦";
       margin-left: 36px;
     }
-
-
     @keyframes marquee {
       to {
         transform:
           translateX(-50%);
       }
     }
-
-
-
     /* ========================================================
        COMMON
        ======================================================== */
-
     section {
       position: relative;
     }
-
-
     .section-pad {
       padding:
         clamp(72px, 10vw, 150px)
         var(--pad);
     }
-
-
     .section-head {
       display: grid;
-
       grid-template-columns:
         170px
         minmax(0, 1fr);
-
       gap: 28px;
-
       align-items: start;
-
       margin-bottom:
         clamp(46px, 7vw, 90px);
     }
-
-
     .section-num {
       font-size: 13px;
       font-weight: 800;
     }
-
-
     .section-title {
       max-width: 1100px;
-
       margin: 0;
-
       font-size:
         clamp(50px, 7vw, 112px);
-
       line-height: 0.87;
-
       letter-spacing: -0.075em;
-
       font-weight: 800;
     }
-
-
     .lead {
       max-width: 930px;
-
       margin: 0;
-
       font-size:
         clamp(24px, 3.15vw, 48px);
-
       line-height: 1.08;
-
       letter-spacing: -0.045em;
     }
-
-
     .small-note {
       max-width: 580px;
-
       font-size: 14px;
       line-height: 1.48;
-
       color: var(--muted);
     }
-
-
     figcaption {
       margin-top: 9px;
-
       font-size: 11px;
       line-height: 1.3;
-
       letter-spacing: 0.045em;
-
       text-transform: uppercase;
     }
-
-
-
     /* ========================================================
        INTRO
        ======================================================== */
-
     .intro {
       padding:
         clamp(80px, 12vw, 170px)
         var(--pad);
     }
-
-
     .intro-grid {
       display: grid;
-
       grid-template-columns:
         1.25fr
         0.75fr;
-
       gap:
         clamp(42px, 8vw, 120px);
-
       align-items: end;
     }
-
-
     .intro-aside {
       display: grid;
       gap: 28px;
     }
-
-
     .intro-fact {
       display: grid;
-
       grid-template-columns:
         88px 1fr;
-
       gap: 18px;
-
       padding-top: 12px;
-
       border-top:
         1px solid var(--line);
     }
-
-
     .intro-fact b {
       font-size: 40px;
       letter-spacing: -0.06em;
     }
-
-
     .intro-fact span {
       padding-top: 8px;
-
       font-size: 13px;
       line-height: 1.35;
     }
-
-
-
     /* ========================================================
        TRIPTYCH
        ======================================================== */
-
     .triptych {
       padding:
         0
         var(--pad)
         clamp(90px, 12vw, 170px);
-
       display: grid;
-
       grid-template-columns:
         0.78fr
         1.05fr
         0.78fr;
-
       gap:
         clamp(12px, 2vw, 28px);
-
       align-items: start;
     }
-
-
     .triptych figure:nth-child(2) {
       margin-top: 10vw;
     }
-
-
     .triptych figure:nth-child(3) {
       margin-top: 3vw;
     }
-
-
     .photo img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
-
     /* ========================================================
        ROUTE
        ======================================================== */
-
     .route {
       background: var(--ink);
       color: var(--paper-light);
     }
-
-
     .route-list {
       border-top:
         1px solid
         rgba(255,255,255,0.28);
     }
-
-
     .route-card {
       display: grid;
-
       grid-template-columns:
         98px
         minmax(0, 1fr)
         minmax(220px, 340px);
-
       gap: 30px;
-
       align-items: center;
-
       min-height: 260px;
-
       padding: 22px 0;
-
       border-bottom:
         1px solid
         rgba(255,255,255,0.28);
     }
-
-
     .route-number {
       align-self: start;
-
       padding-top: 9px;
-
       font-size: 12px;
       font-weight: 700;
-
       color:
         rgba(255,255,255,0.6);
     }
-
-
     .route-name {
       margin: 0;
-
       font-size:
         clamp(34px, 4.8vw, 76px);
-
       line-height: 0.93;
-
       letter-spacing: -0.06em;
-
       font-weight: 700;
     }
-
-
     .route-name small {
       display: block;
-
       margin-top: 13px;
-
       font-size: 13px;
       line-height: 1.3;
-
       letter-spacing: 0;
-
       font-weight: 500;
-
       color:
         rgba(255,255,255,0.62);
     }
-
-
     .route-photo {
       width: min(100%, 250px);
-
       justify-self: end;
     }
-
-
     .route-photo img {
       aspect-ratio: 4 / 5;
       object-fit: cover;
     }
-
-
-
     /* ========================================================
        FOCUS
        ======================================================== */
-
     .focus {
       background: var(--coral);
     }
-
-
     .focus-grid {
       display: grid;
-
       grid-template-columns:
         repeat(3, 1fr);
-
       border-top:
         1px solid rgba(24,24,21,0.35);
-
       border-left:
         1px solid rgba(24,24,21,0.35);
     }
-
-
     .focus-item {
       min-height: 290px;
-
       padding: 24px;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
       border-right:
         1px solid rgba(24,24,21,0.35);
-
       border-bottom:
         1px solid rgba(24,24,21,0.35);
     }
-
-
     .focus-number {
       font-size: 12px;
       font-weight: 800;
     }
-
-
     .focus-item h3 {
       margin: 0;
-
       font-size:
         clamp(27px, 2.6vw, 42px);
-
       line-height: 0.98;
       letter-spacing: -0.045em;
     }
-
-
     .focus-item p {
       max-width: 340px;
-
       margin: 18px 0 0;
-
       font-size: 13px;
       line-height: 1.4;
     }
-
-
-
     /* ========================================================
        SEMINAR
        ======================================================== */
-
     .seminar {
       background: var(--paper-light);
     }
-
-
     .seminar-intro {
       display: grid;
-
       grid-template-columns:
         1fr 0.55fr;
-
       gap: 70px;
-
       align-items: end;
-
       margin-bottom: 80px;
     }
-
-
     .seminar-list {
       border-top:
         1px solid var(--line);
     }
-
-
     .session {
       display: grid;
-
       grid-template-columns:
         78px
         minmax(0, 1fr)
         minmax(220px, 300px);
-
       gap: 28px;
-
       align-items: start;
-
       padding: 32px 0;
-
       border-bottom:
         1px solid var(--line);
     }
-
-
     .session-number {
       padding-top: 6px;
-
       font-size: 12px;
       font-weight: 800;
     }
-
-
     .session-title {
       max-width: 790px;
-
       margin: 0 0 14px;
-
       font-size:
         clamp(28px, 3vw, 48px);
-
       line-height: 0.99;
       letter-spacing: -0.045em;
     }
-
-
     .session-text {
       max-width: 780px;
-
       margin: 0;
-
       font-size: 14px;
       line-height: 1.5;
     }
-
-
     .session-people {
       margin-top: 18px;
-
       font-size: 12px;
       line-height: 1.45;
-
       color: var(--muted);
     }
-
-
     .session-photo {
       width: min(100%, 230px);
-
       justify-self: end;
     }
-
-
     .session-photo img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
     .session:nth-child(2) .session-photo {
       transform: rotate(1.4deg);
     }
-
-
     .session:nth-child(3) .session-photo {
       transform: rotate(-1deg);
     }
-
-
     .session:nth-child(4) .session-photo {
       transform: rotate(1deg);
     }
-
-
     .session:nth-child(5) .session-photo {
       transform: rotate(-1.4deg);
     }
-
-
     .seminar-photos {
       margin-top:
         clamp(50px, 8vw, 110px);
-
       display: grid;
-
       grid-template-columns:
         0.7fr 1fr;
-
       gap:
         clamp(20px, 5vw, 70px);
-
       align-items: end;
     }
-
-
-
     /* ========================================================
        BIG QUOTE
        ======================================================== */
-
     .big-quote {
       position: relative;
-
       overflow: hidden;
-
       padding:
         clamp(90px, 12vw, 180px)
         var(--pad);
-
       background: var(--blue);
-
-      color: #fff8e9;
+      color: 
+#fff8e9;
     }
-
-
     .big-quote-text {
       position: relative;
       z-index: 2;
-
       max-width: 1180px;
-
       margin: 0;
-
       font-size:
         clamp(43px, 6.7vw, 105px);
-
       line-height: 0.92;
       letter-spacing: -0.065em;
-
       font-weight: 700;
     }
-
-
     .big-quote-text em {
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-weight: 400;
     }
-
-
     .quote-mark {
       position: absolute;
-
       right: -2vw;
       top: -8vw;
-
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-size:
         min(45vw, 700px);
-
       line-height: 1;
-
       color:
         rgba(255,255,255,0.07);
     }
-
-
-
     /* ========================================================
        PARENTS
        ======================================================== */
-
     .parents {
       background: var(--yellow);
     }
-
-
     .parents-intro {
       display: grid;
-
       grid-template-columns:
         minmax(0, 0.78fr)
         minmax(0, 1.22fr);
-
       gap:
         clamp(35px, 7vw, 110px);
-
       align-items: end;
-
       margin-bottom:
         clamp(55px, 8vw, 120px);
     }
-
-
     .parents-date {
       max-width: 400px;
-
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-style: italic;
-
       font-size:
         clamp(28px, 3.8vw, 58px);
-
       line-height: 1;
     }
-
-
     .parents-text {
       max-width: 790px;
-
       margin: 0;
-
       font-size:
         clamp(24px, 3vw, 45px);
-
       line-height: 1.08;
-
       letter-spacing: -0.04em;
     }
-
-
     .parents-gallery {
       display: grid;
-
       grid-template-columns:
         minmax(0, 1.1fr)
         minmax(220px, 0.55fr);
-
       gap:
         clamp(18px, 5vw, 72px);
-
       align-items: start;
     }
-
-
     .parents-photo-main {
       width: 78%;
     }
-
-
     .parents-photo-main img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
     .parents-photo-side {
       width: 100%;
-
       margin-top: 10vw;
-
       transform: rotate(1.8deg);
     }
-
-
     .parents-photo-side img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
     .parents-line {
       margin-top:
         clamp(60px, 9vw, 130px);
-
       padding-top: 18px;
-
       border-top:
         1px solid rgba(24,24,21,0.55);
-
       display: grid;
-
       grid-template-columns:
         170px 1fr;
-
       gap: 28px;
     }
-
-
     .parents-line p {
       max-width: 780px;
-
       margin: 0;
-
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-style: italic;
-
       font-size:
         clamp(24px, 3vw, 46px);
-
       line-height: 1.05;
     }
-
-
-
     /* ========================================================
        PEOPLE
        ======================================================== */
-
     .people-grid {
       display: grid;
-
       grid-template-columns:
         1.05fr 0.65fr;
-
       gap:
         clamp(30px, 6vw, 90px);
-
       align-items: start;
     }
-
-
     .people-main img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
     .people-side {
       padding-top: 8vw;
     }
-
-
     .people-side .lead {
       font-size:
         clamp(27px, 3vw, 44px);
     }
-
-
     .meeting-photo {
       width: 72%;
-
       margin:
         52px 0 0 auto;
-
       transform: rotate(1.8deg);
     }
-
-
     .meeting-photo img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
-
     /* ========================================================
        LIFE
        ======================================================== */
-
     .journal {
       padding-bottom:
         clamp(100px, 12vw, 180px);
     }
-
-
     .journal-head {
       padding-bottom: 60px;
     }
-
-
     .journal-grid {
       display: grid;
-
       grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.1fr);
-
+        1fr 1fr;
       gap:
         clamp(24px, 5vw, 72px);
-
-      align-items: center;
-
+      align-items: start;
       padding:
         0 var(--pad);
     }
-
-
-    .journal-photo {
-      width: min(100%, 420px);
+    .journal-column {
+      display: grid;
+      gap:
+        clamp(34px, 8vw, 110px);
     }
-
-
+    .journal-column:nth-child(2) {
+      padding-top: 12vw;
+    }
     .journal-photo img {
       aspect-ratio: 3 / 4;
       object-fit: cover;
     }
-
-
+    .journal-small {
+      width: 72%;
+    }
+    .journal-right {
+      margin-left: auto;
+    }
     .journal-note {
       padding: 24px;
-
       border:
         1px solid var(--ink);
-
       background: var(--coral);
-
       transform: rotate(-1.1deg);
     }
-
-
     .journal-note p {
       margin: 0;
-
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-style: italic;
-
       font-size:
         clamp(25px, 3.2vw, 48px);
-
       line-height: 1.05;
     }
-
-
-
     /* ========================================================
        CLOSING
        ======================================================== */
-
     .closing {
       min-height: 92svh;
-
       display: grid;
-
-      grid-template-columns: 1fr;
-
+      grid-template-columns:
+        1fr 0.72fr;
       background: var(--green);
-
-      color: #fff9e8;
+      color: 
+#fff9e8;
     }
-
-
     .closing-text {
       padding:
         clamp(70px, 8vw, 120px)
-        var(--pad)
-        calc(clamp(70px, 8vw, 120px) + env(safe-area-inset-bottom));
-
+        var(--pad);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      min-height: 92svh;
     }
-
-
     .closing h2 {
       max-width: 780px;
-
       margin: 0;
-
       font-size:
         clamp(58px, 8.5vw, 136px);
-
       line-height: 0.82;
       letter-spacing: -0.075em;
-
       font-weight: 800;
     }
-
-
     .closing h2 em {
       font-family:
         "PT Serif",
         Georgia,
         serif;
-
       font-weight: 400;
     }
-
-
     .eyebrow {
       display: inline-flex;
-
       gap: 9px;
-
       align-items: center;
-
       font-size: 12px;
       font-weight: 700;
-
       letter-spacing: 0.08em;
-
       text-transform: uppercase;
     }
-
-
     .eyebrow::before {
       content: "";
-
       width: 9px;
       height: 9px;
-
       flex: 0 0 auto;
-
       border-radius: 50%;
-
       background: currentColor;
     }
-
-
     .closing-bottom {
       display: grid;
       gap: 20px;
-
       max-width: 720px;
     }
-
-
     .closing-bottom p {
       margin: 0;
-
       font-size:
         clamp(18px, 1.8vw, 26px);
-
       line-height: 1.2;
     }
-
-
-
-
-
-
-
+    .closing-photo {
+      min-height: 92svh;
+    }
+    .closing-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 92svh;
+      object-fit: cover;
+    }
     /* ========================================================
        FOOTER
        ======================================================== */
-
     .footer {
       display: flex;
-
       justify-content: space-between;
-
       gap: 30px;
-
       padding:
         18px var(--pad);
-
       background: var(--ink);
-
       color: white;
-
       font-size: 11px;
       line-height: 1.35;
-
       letter-spacing: 0.04em;
-
       text-transform: uppercase;
     }
-
-
-
     /* ========================================================
        REVEAL
        ======================================================== */
-
     .reveal {
       opacity: 0;
-
       transform:
         translateY(24px);
-
       transition:
         opacity 0.75s
         cubic-bezier(.2,.7,.2,1),
-
         transform 0.75s
         cubic-bezier(.2,.7,.2,1);
     }
-
-
     .reveal.visible {
       opacity: 1;
       transform: none;
     }
-
-
-
     /* ========================================================
        TABLET
        ======================================================== */
-
     @media (max-width: 900px) {
-
       .hero {
         min-height: auto;
-
         grid-template-columns: 1fr;
       }
-
-
       .hero-left {
         min-height: 70svh;
       }
-
-
       .hero-title {
         font-size:
           clamp(70px, 21vw, 145px);
       }
-
-
       .hero-photo-wrap {
         width: 74%;
         justify-self: end;
       }
-
-
       .section-head {
         grid-template-columns:
           70px 1fr;
       }
-
-
       .intro-grid,
       .seminar-intro,
       .people-grid,
       .closing {
         grid-template-columns: 1fr;
       }
-
-
       .triptych {
         grid-template-columns:
           1fr 1fr;
       }
-
-
       .triptych figure:nth-child(2) {
         margin-top: 18vw;
       }
-
-
       .triptych figure:nth-child(3) {
         grid-column: 2;
-
         margin-top: 0;
       }
-
-
       .route-card {
         grid-template-columns:
           48px 1fr 170px;
-
         gap: 16px;
       }
-
-
       .focus-grid {
         grid-template-columns:
           1fr 1fr;
       }
-
-
       .session {
         grid-template-columns:
           52px
           minmax(0, 1fr)
           180px;
       }
-
-
       .parents-intro {
         grid-template-columns: 1fr;
       }
-
-
       .parents-gallery {
         grid-template-columns:
           1fr 0.65fr;
       }
-
-
       .parents-photo-main {
         width: 100%;
       }
-
-
-      .closing-text {
+      .closing-photo,
+      .closing-photo img {
         min-height: 65svh;
       }
-
     }
-
-
-
     /* ========================================================
        MOBILE
        ======================================================== */
-
     @media (max-width: 640px) {
-
       .topbar {
         padding-top: 11px;
         padding-bottom: 11px;
       }
-
-
       .nav a:not(:last-child) {
         display: none;
       }
-
-
       .hero {
         padding-top: 28px;
       }
-
-
       .hero-left {
         min-height: 58svh;
       }
-
-
       .hero-meta {
         padding-bottom: 24px;
       }
-
-
       .hero-title {
         font-size:
           clamp(63px, 22.7vw, 105px);
-
         line-height: 0.75;
       }
-
-
       .hero-photo-wrap {
         width: 84%;
       }
-
-
       .stamp {
         width: 100px;
         height: 100px;
-
         right: -8px;
-
         font-size: 11px;
       }
-
-
       .scribble {
         display: none;
       }
-
-
       .section-head {
         display: block;
       }
-
-
       .section-num {
         margin-bottom: 14px;
       }
-
-
       .section-title {
         font-size:
           clamp(46px, 14vw, 78px);
       }
-
-
       .intro-grid {
         gap: 48px;
       }
-
-
       .triptych {
         grid-template-columns:
           1fr 1fr;
-
         gap: 10px;
       }
-
-
       .route-card {
         grid-template-columns:
           34px
           minmax(0, 1fr);
-
         min-height: auto;
-
         padding:
           22px 0 28px;
       }
-
-
       .route-photo {
         grid-column: 2;
-
         width: 68%;
-
         justify-self: start;
-
         margin-top: 6px;
       }
-
-
       .focus-grid {
         grid-template-columns: 1fr;
       }
-
-
       .focus-item {
         min-height: 230px;
       }
-
-
       .session {
         grid-template-columns:
           36px 1fr;
       }
-
-
       .session-photo {
         grid-column: 2;
-
         width: 66%;
-
         justify-self: start;
-
         margin-top: 14px;
       }
-
-
       .seminar-photos {
         grid-template-columns:
           1fr 1fr;
-
         gap: 10px;
       }
-
-
       .parents-gallery {
         grid-template-columns:
           1fr 0.75fr;
-
         gap: 12px;
       }
-
-
       .parents-photo-side {
         margin-top: 28vw;
       }
-
-
       .parents-line {
         grid-template-columns: 1fr;
-
         gap: 14px;
       }
-
-
       .people-side {
         padding-top: 0;
       }
-
-
       .meeting-photo {
         width: 72%;
       }
-
-
       .journal-grid {
-        grid-template-columns: 1fr;
-
-        gap: 28px;
+        gap: 14px;
       }
-
-
-      .journal-photo {
-        width: 78%;
+      .journal-column {
+        gap: 52px;
       }
-
-
+      .journal-small {
+        width: 100%;
+      }
       .journal-note {
         padding: 14px;
       }
-
-
       .closing {
         min-height: auto;
       }
-
-
       .closing-text {
         min-height: 72svh;
       }
-
-
       .footer {
         flex-direction: column;
-
         gap: 6px;
-
-        padding-bottom:
-          calc(18px + env(safe-area-inset-bottom));
       }
-
     }
-
-
-
     @media (
       prefers-reduced-motion: reduce
     ) {
-
       html {
         scroll-behavior: auto;
       }
-
-
       .marquee-track {
         animation: none;
       }
-
-
       .reveal {
         opacity: 1;
         transform: none;
         transition: none;
       }
-
     }
-
   </style>
 </head>
-
-
 <body>
-
-
 <header class="topbar">
 
-  <a
     class="brand"
     href="#top"
   >
     БАШКОРТОСТАН / 2026
   </a>
-
-
   <nav
     class="nav"
     aria-label="Навигация"
   >
-
     <a href="#route">
       маршрут
     </a>
-
     <a href="#seminar">
       семинар
     </a>
-
     <a href="#parents">
       родители
     </a>
-
     <a href="#people">
       люди
     </a>
-
     <a href="#after">
       после
     </a>
-
   </nav>
-
 </header>
-
-
-
 <main
   id="top"
   class="page"
 >
-
-
 <!-- ======================================================
      HERO
      ====================================================== -->
-
 <section class="hero">
-
-
   <div class="hero-left">
-
-
     <div class="hero-meta reveal">
-
       <span>
         03—08 / 08 / 2026
       </span>
-
       <span>
         Республика Башкортостан
       </span>
-
       <span>
         экспертные визиты + семинар + встреча
       </span>
-
     </div>
-
-
-
     <div>
-
       <h1 class="hero-title reveal">
-
         <span>
           Баш
         </span>
-
         <span class="soft">
           корто
         </span>
-
         <span>
           стан
         </span>
-
       </h1>
-
-
       <p class="hero-caption reveal">
-
         Смотреть внимательнее.
-
         Обсуждать честно.
-
         <span class="serif italic">
           Менять конкретно.
         </span>
-
       </p>
-
     </div>
-
   </div>
-
-
-
   <div class="hero-photo-wrap reveal">
-
-            <img
-          class="hero-photo"
-          src="01-hero.jpg"
-          alt="Башкортостан"
-          width="1086"
-          height="1448"
-          fetchpriority="high"
-          decoding="async"
-        >
-
-
+    <img
+      class="hero-photo"
+      src="images/01-hero.jpg"
+      alt="Башкортостан"
+    >
     <div class="stamp">
-
       август
       <br>
       2026
-
     </div>
-
   </div>
-
-
-
   <svg
     class="scribble"
     viewBox="0 0 200 115"
     fill="none"
     aria-hidden="true"
   >
-
     <path
       d="
       M7 88
       C27 16 75 10 96 56
       C116 98 157 95 193 20
       "
-      stroke="#181815"
+      stroke="
+#181815"
       stroke-width="3.2"
       stroke-linecap="round"
     />
-
     <path
       d="
       M151 12
       L194 19
       L180 58
       "
-      stroke="#181815"
+      stroke="
+#181815"
       stroke-width="3.2"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
-
   </svg>
-
 </section>
-
-
-
 <!-- RUNNING LINE -->
-
 <div class="marquee">
-
   <div class="marquee-track">
-
     <div class="marquee-item">
       уход
     </div>
-
     <div class="marquee-item">
       питание
     </div>
-
     <div class="marquee-item">
       коммуникация
     </div>
-
     <div class="marquee-item">
       психиатрическая помощь
     </div>
-
     <div class="marquee-item">
       работа со случаем
     </div>
-
     <div class="marquee-item">
       родители
     </div>
-
     <div class="marquee-item">
       качество жизни
     </div>
-
-
     <div class="marquee-item">
       уход
     </div>
-
     <div class="marquee-item">
       питание
     </div>
-
     <div class="marquee-item">
       коммуникация
     </div>
-
     <div class="marquee-item">
       психиатрическая помощь
     </div>
-
     <div class="marquee-item">
       работа со случаем
     </div>
-
     <div class="marquee-item">
       родители
     </div>
-
     <div class="marquee-item">
       качество жизни
     </div>
-
   </div>
-
 </div>
-
-
-
 <!-- ======================================================
      INTRO
      ====================================================== -->
-
 <section class="intro">
-
   <div class="intro-grid">
-
-
     <p class="lead reveal">
-
       Несколько дней,
-
       шесть организаций,
-
       много разговоров на месте,
-
       большой семинар —
-
       и ещё один отдельный разговор
-
       в конце поездки.
-
       <br><br>
-
       Не просто посмотреть учреждение,
-
       а увидеть,
-
       <span class="serif italic">
-
         как устроена
         повседневная жизнь человека.
-
       </span>
-
     </p>
-
-
-
     <div class="intro-aside reveal">
-
-
       <div class="intro-fact">
-
         <b>
           6
         </b>
-
         <span>
-
           организаций
           в маршруте
           экспертных визитов
-
         </span>
-
       </div>
-
-
-
       <div class="intro-fact">
-
         <b>
           5
         </b>
-
         <span>
-
           тематических линий
           практического семинара
-
         </span>
-
       </div>
-
-
-
       <div class="intro-fact">
-
         <b>
           +1
         </b>
-
         <span>
-
           отдельная встреча
           с родителями
-
         </span>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      ATMOSPHERE
      ====================================================== -->
-
 <div class="triptych">
-
-
   <figure class="photo reveal">
-
-            <img
-          src="17-place.jpg"
-          alt="Место проживания"
-          width="1600"
-          height="1200"
-          loading="lazy"
-          decoding="async"
-        >
-
+    <img
+      src="images/17-place.jpg"
+      alt="Место проживания"
+    >
     <figcaption>
       место / между рабочими днями
     </figcaption>
-
   </figure>
-
-
-
   <figure class="photo reveal">
-
-            <img
-          src="18-morning-evening.jpg"
-          alt="Утро или вечер"
-          width="1050"
-          height="1400"
-          loading="lazy"
-          decoding="async"
-        >
-
+    <img
+      src="images/18-morning-evening.jpg"
+      alt="Утро или вечер"
+    >
     <figcaption>
       утро / вечер
     </figcaption>
-
   </figure>
-
-
-
   <figure class="photo reveal">
-
-            <img
-          src="20-bashkortostan.jpg"
-          alt="Башкортостан"
-          width="1400"
-          height="1050"
-          loading="lazy"
-          decoding="async"
-        >
-
+    <img
+      src="images/20-bashkortostan.jpg"
+      alt="Башкортостан"
+    >
     <figcaption>
       дорога / Башкортостан
     </figcaption>
-
   </figure>
-
 </div>
-
-
-
 <!-- ======================================================
      ROUTE
      ====================================================== -->
-
 <section
   id="route"
   class="route section-pad"
 >
-
-
   <div class="section-head">
-
     <div class="section-num">
       01 / маршрут
     </div>
-
-
     <h2 class="section-title">
-
       Шесть точек.
-
       <br>
-
       <span class="serif italic">
         Один разговор
       </span>
-
       <br>
-
       о качестве жизни.
-
     </h2>
-
   </div>
-
-
-
   <div class="route-list">
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         01
       </div>
-
       <h3 class="route-name">
-
         Кумертау
-
         <small>
           ДСО «Южный»
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="02-kumertau.jpg"
+        <img
+          src="images/02-kumertau.jpg"
           alt="Кумертау"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         02
       </div>
-
       <h3 class="route-name">
-
         Ишимбай
-
         <small>
           ДСО «Добрые сердца»
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="03-ishimbay.jpg"
+        <img
+          src="images/03-ishimbay.jpg"
           alt="Ишимбай"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         03
       </div>
-
       <h3 class="route-name">
-
         Серафимовский
-
         <small>
           ДДСО
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="04-serafimovsky.jpg"
+        <img
+          src="images/04-serafimovsky.jpg"
           alt="Серафимовский"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         04
       </div>
-
       <h3 class="route-name">
-
         Верхнетроицкий
-
         <small>
           дом социального обслуживания
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="05-verhnetroitsky.jpg"
+        <img
+          src="images/05-verhnetroitsky.jpg"
           alt="Верхнетроицкий"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         05
       </div>
-
       <h3 class="route-name">
-
         Буздяк
-
         <small>
           дом социального обслуживания
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="06-buzdyak.jpg"
+        <img
+          src="images/06-buzdyak.jpg"
           alt="Буздяк"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="route-card reveal">
-
       <div class="route-number">
         06
       </div>
-
       <h3 class="route-name">
-
         Именлек
-
         <small>
           республиканский геронтологический центр
         </small>
-
       </h3>
-
       <figure class="route-photo">
-
-                <img
-          src="07-imenlek.jpg"
+        <img
+          src="images/07-imenlek.jpg"
           alt="Именлек"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      FOCUS
      ====================================================== -->
-
 <section
   id="focus"
   class="focus section-pad"
 >
-
-
   <div class="section-head">
-
     <div class="section-num">
       02 / смотрели
     </div>
-
-
     <h2 class="section-title">
-
       Повседневность —
-
       <br>
-
       <span class="serif italic">
         главный документ.
       </span>
-
     </h2>
-
   </div>
-
-
-
   <div class="focus-grid">
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         01
       </span>
-
       <div>
-
         <h3>
           Уход и положение тела
         </h3>
-
         <p>
           Как человек лежит, сидит,
           перемещается и получает помощь.
         </p>
-
       </div>
-
     </article>
-
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         02
       </span>
-
       <div>
-
         <h3>
           Питание и нутритивная поддержка
         </h3>
-
         <p>
           Пищевой статус, организация питания,
           помощь при кормлении и доступ к воде.
         </p>
-
       </div>
-
     </article>
-
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         03
       </span>
-
       <div>
-
         <h3>
           Коммуникация
         </h3>
-
         <p>
           Возможность сообщать о выборе,
           просьбе и отказе.
         </p>
-
       </div>
-
     </article>
-
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         04
       </span>
-
       <div>
-
         <h3>
           Среда и безопасность
         </h3>
-
         <p>
           Навигация, пространство,
           личные вещи и приватность.
         </p>
-
       </div>
-
     </article>
-
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         05
       </span>
-
       <div>
-
         <h3>
           Психиатрическая помощь
         </h3>
-
         <p>
           Терапия, наблюдение,
           качество жизни и социальное функционирование.
         </p>
-
       </div>
-
     </article>
-
-
-
     <article class="focus-item reveal">
-
       <span class="focus-number">
         06
       </span>
-
       <div>
-
         <h3>
           Занятость и участие
         </h3>
-
         <p>
           Что происходит в течение дня
           и остаётся ли человек участником своей жизни.
         </p>
-
       </div>
-
     </article>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      SEMINAR
      ====================================================== -->
-
 <section
   id="seminar"
   class="seminar section-pad"
 >
-
-
   <div class="section-head">
-
     <div class="section-num">
       03 / семинар
     </div>
-
-
     <h2 class="section-title">
-
       После наблюдений —
-
       <br>
-
       <span class="serif italic">
         практика.
       </span>
-
     </h2>
-
   </div>
-
-
-
   <div class="seminar-intro">
-
-
     <p class="lead reveal">
-
       Разбирать реальные ситуации
-
       и искать действия,
-
       которые можно перенести
-
       в ежедневную работу.
-
     </p>
-
-
-
     <p class="small-note reveal">
-
       Интерактивные разборы,
-
       практические задания,
-
       работа с кейсами
-
       и обсуждение решений
-
       между специалистами разных профилей.
-
     </p>
-
   </div>
-
-
-
   <div class="seminar-list">
-
-
     <article class="session reveal">
-
       <div class="session-number">
         01
       </div>
-
       <div>
-
         <h3 class="session-title">
-
           «Путешествие»
           в отделение
           интенсивного ухода
-
         </h3>
-
         <p class="session-text">
-
           Атмосфера отделения,
           внешний вид жителей,
           документация,
@@ -2738,816 +1705,461 @@
           занятость,
           коммуникация,
           навигация и безопасность.
-
         </p>
-
         <p class="session-people">
-
           Т.А. Портнягина
           ·
           Л. Андрев
-
         </p>
-
       </div>
-
       <figure class="session-photo">
-
-                <img
-          src="08-seminar-01.jpg"
+        <img
+          src="images/08-seminar-01.jpg"
           alt="Семинар по уходу"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="session reveal">
-
       <div class="session-number">
         02
       </div>
-
       <div>
-
         <h3 class="session-title">
-
           Недостаточность питания:
-
           как выявлять
-
           и корректировать
-
         </h3>
-
         <p class="session-text">
-
           Оценка пищевого статуса,
           раннее выявление риска,
           лечебное питание
           и нутритивная поддержка.
-
         </p>
-
         <p class="session-people">
-
           Ю.Р. Вараева
           ·
           А.Л. Битова
-
         </p>
-
       </div>
-
       <figure class="session-photo">
-
-                <img
-          src="09-seminar-02.jpg"
+        <img
+          src="images/09-seminar-02.jpg"
           alt="Семинар по питанию"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="session reveal">
-
       <div class="session-number">
         03
       </div>
-
       <div>
-
         <h3 class="session-title">
-
           АДК,
-
           визуализация
-
           и наглядность
-
         </h3>
-
         <p class="session-text">
-
           Практические кейсы,
           средства альтернативной
           и дополнительной коммуникации
           и визуальные опоры.
-
         </p>
-
         <p class="session-people">
-
           О.В. Караневская
-
         </p>
-
       </div>
-
       <figure class="session-photo">
-
-                <img
-          src="10-seminar-03.jpg"
+        <img
+          src="images/10-seminar-03.jpg"
           alt="Мастер-класс по АДК"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="session reveal">
-
       <div class="session-number">
         04
       </div>
-
       <div>
-
         <h3 class="session-title">
-
           Амбулаторное
-
           психиатрическое лечение
-
           в социальном стационаре
-
         </h3>
-
         <p class="session-text">
-
           Современные способы лечения,
           эффективная и безопасная терапия,
           качество жизни
           и социальное функционирование.
-
         </p>
-
         <p class="session-people">
-
           Н.В. Соловьева
-
         </p>
-
       </div>
-
       <figure class="session-photo">
-
-                <img
-          src="11-seminar-04.jpg"
+        <img
+          src="images/11-seminar-04.jpg"
           alt="Семинар по психиатрической помощи"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
-
-
     <article class="session reveal">
-
       <div class="session-number">
         05
       </div>
-
       <div>
-
         <h3 class="session-title">
-
           Работа со случаем:
-
           почему возникают
-
           «сложные случаи»
-
         </h3>
-
         <p class="session-text">
-
           Один случай рассматривается
-
           с разных позиций.
-
           Задача —
-
           увидеть не только ответственность,
-
           но и ресурсы помощи.
-
         </p>
-
       </div>
-
       <figure class="session-photo">
-
-                <img
-          src="12-seminar-05.jpg"
+        <img
+          src="images/12-seminar-05.jpg"
           alt="Работа со случаем"
-          loading="lazy"
-          decoding="async"
         >
-
       </figure>
-
     </article>
-
   </div>
-
-
-
   <div class="seminar-photos">
-
-
     <figure class="photo reveal">
-
-              <img
-          src="13-seminar-06.jpg"
-          alt="Работа участников семинара"
-          loading="lazy"
-          decoding="async"
-        >
-
+      <img
+        src="images/13-seminar-06.jpg"
+        alt="Работа участников семинара"
+      >
       <figcaption>
         обсуждение / работа в группах
       </figcaption>
-
     </figure>
-
-
     <figure class="photo reveal">
-
-              <img
-          src="16-seminar-wide.jpg"
-          alt="Семинар"
-          loading="lazy"
-          decoding="async"
-        >
-
+      <img
+        src="images/16-seminar-wide.jpg"
+        alt="Семинар"
+      >
       <figcaption>
         семинар / общий разговор
       </figcaption>
-
     </figure>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      BIG STATEMENT
      ====================================================== -->
-
 <section class="big-quote">
-
   <div class="quote-mark">
     “
   </div>
-
   <p class="big-quote-text reveal">
-
     Вопрос не только в том,
-
     <em>
       что есть в учреждении.
     </em>
-
     Вопрос —
-
     что из этого
-
     каждый день получает
-
     конкретный человек.
-
   </p>
-
 </section>
-
-
-
 <!-- ======================================================
      PARENTS
      ====================================================== -->
-
 <section
   id="parents"
   class="parents section-pad"
 >
-
-
   <div class="section-head">
-
     <div class="section-num">
       04 / встреча
     </div>
-
-
     <h2 class="section-title">
-
       С родителями.
-
       <br>
-
       <span class="serif italic">
         Отдельно.
       </span>
-
     </h2>
-
   </div>
-
-
-
   <div class="parents-intro">
-
-
     <div class="parents-date reveal">
-
       Суббота.
-
       <br>
-
       Последний день поездки.
-
     </div>
-
-
     <p class="parents-text reveal">
-
       После мониторинга
-
       и большого семинара
-
       состоялась ещё одна встреча —
-
       отдельный разговор
-
       с родителями.
-
     </p>
-
   </div>
-
-
-
   <div class="parents-gallery">
-
-
     <figure class="parents-photo-main reveal">
-
-              <img
-          src="21-parents.jpg"
-          alt="Встреча с родителями"
-          loading="lazy"
-          decoding="async"
-        >
-
+      <img
+        src="images/21-parents.jpg"
+        alt="Встреча с родителями"
+      >
       <figcaption>
         встреча с родителями / 08.08.2026
       </figcaption>
-
     </figure>
-
-
-
     <figure class="parents-photo-side reveal">
-
-              <img
-          src="22-parents-02.jpg"
-          alt="Разговор с родителями"
-          loading="lazy"
-          decoding="async"
-        >
-
+      <img
+        src="images/22-parents-02.jpg"
+        alt="Разговор с родителями"
+      >
       <figcaption>
         разговор / вопросы / обсуждение
       </figcaption>
-
     </figure>
-
   </div>
-
-
-
   <div class="parents-line reveal">
-
     <div class="section-num">
       08 августа
     </div>
-
     <p>
-
       Ещё один голос,
-
       который важно
-
       не потерять
-
       в разговоре
-
       об изменениях.
-
     </p>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      PEOPLE
      ====================================================== -->
-
 <section
   id="people"
   class="section-pad"
 >
-
-
   <div class="section-head">
-
     <div class="section-num">
       05 / люди
     </div>
-
-
     <h2 class="section-title">
-
       Экспертиза —
-
       это разговор
-
       <br>
-
       <span class="serif italic">
         между людьми.
       </span>
-
     </h2>
-
   </div>
-
-
-
   <div class="people-grid">
-
-
     <figure class="people-main reveal">
-
-              <img
-          src="15-team.jpg"
-          alt="Экспертная команда"
-          loading="lazy"
-          decoding="async"
-        >
-
+      <img
+        src="images/15-team.jpg"
+        alt="Экспертная команда"
+      >
       <figcaption>
         команда / Башкортостан / август 2026
       </figcaption>
-
     </figure>
-
-
-
     <div class="people-side">
-
-
       <p class="lead reveal">
-
         На месте важны детали.
-
         Но не меньше важно
-
         обсуждать увиденное вместе:
-
         с коллегами,
-
         сотрудниками организаций,
-
         руководителями
-
         и специалистами региона.
-
       </p>
-
-
-
       <figure class="meeting-photo reveal">
-
-                <img
-          src="14-meeting.jpg"
+        <img
+          src="images/14-meeting.jpg"
           alt="Рабочее обсуждение"
-          loading="lazy"
-          decoding="async"
         >
-
         <figcaption>
           рабочее обсуждение
         </figcaption>
-
       </figure>
-
     </div>
-
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      BETWEEN
      ====================================================== -->
-
 <section class="journal">
-
-
   <div class="section-pad journal-head">
-
     <div
       class="section-head"
       style="margin-bottom:0"
     >
-
       <div class="section-num">
         06 / между
       </div>
-
-
       <h2 class="section-title">
-
         И ещё была
-
         <br>
-
         <span class="serif italic">
           сама поездка.
         </span>
-
       </h2>
-
     </div>
-
   </div>
-
-
-
   <div class="journal-grid">
-
-
-    <figure class="journal-photo reveal">
-
-              <img
-          src="19-team-life.jpg"
+    <div class="journal-column">
+      <figure class="journal-photo reveal">
+        <img
+          src="images/19-team-life.jpg"
           alt="Команда между рабочими событиями"
-          width="1050"
-          height="1400"
-          loading="lazy"
-          decoding="async"
         >
-
-      <figcaption>
-        между работой / просто вместе
-      </figcaption>
-
-    </figure>
-
-
-    <div class="journal-note reveal">
-
-      <p>
-
-        Дорога,
-
-        разговоры после визитов,
-
-        красивые места
-
-        и короткие паузы —
-
-        тоже часть
-
-        этой истории.
-
-      </p>
-
+        <figcaption>
+          между работой / просто вместе
+        </figcaption>
+      </figure>
+      <div class="journal-note reveal">
+        <p>
+          Дорога,
+          разговоры после визитов,
+          красивые места
+          и короткие паузы —
+          тоже часть
+          этой истории.
+        </p>
+      </div>
     </div>
-
+    <div class="journal-column">
+      <figure
+        class="
+          journal-photo
+          journal-small
+          journal-right
+          reveal
+        "
+      >
+        <img
+          src="images/17-place.jpg"
+          alt="Место проживания"
+        >
+        <figcaption>
+          там, где мы жили
+        </figcaption>
+      </figure>
+      <figure class="journal-photo reveal">
+        <img
+          src="images/20-bashkortostan.jpg"
+          alt="Башкортостан"
+        >
+        <figcaption>
+          Башкортостан / август
+        </figcaption>
+      </figure>
+    </div>
   </div>
-
 </section>
-
-
-
 <!-- ======================================================
      CLOSING
      ====================================================== -->
-
 <section
   id="after"
   class="closing"
 >
-
-
   <div class="closing-text">
-
-
     <div>
-
       <span class="eyebrow">
         после поездки
       </span>
-
     </div>
-
-
-
     <h2 class="reveal">
-
       Смотреть.
-
       <br>
-
       Замечать.
-
       <br>
-
       <em>
         Менять.
       </em>
-
     </h2>
-
-
-
     <div class="closing-bottom reveal">
-
-
       <p>
-
         Итоги экспертных визитов —
-
         это не финальная точка,
-
         а материал
-
         для следующих решений.
-
       </p>
-
-
       <span class="eyebrow">
-
         Республика Башкортостан
-
         ·
-
         август 2026
-
       </span>
-
     </div>
-
   </div>
-
+  <div class="closing-photo">
+    <img
+      src="images/01-hero.jpg"
+      alt="Башкортостан"
+    >
+  </div>
 </section>
-
-
 </main>
-
-
-
 <footer class="footer">
-
   <span>
     Экспертные визиты · семинар · встреча
   </span>
-
   <span>
     Республика Башкортостан · 03—08.08.2026
   </span>
-
 </footer>
-
-
-
 <script>
-
   const items =
     document.querySelectorAll(
       ".reveal"
     );
-
-
   if (
     "IntersectionObserver"
     in window
   ) {
-
-
     const observer =
       new IntersectionObserver(
-
         entries => {
-
-
           entries.forEach(
-
             entry => {
-
-
               if (
                 entry.isIntersecting
               ) {
-
-
                 entry.target
                   .classList
                   .add(
                     "visible"
                   );
-
-
                 observer
                   .unobserve(
                     entry.target
                   );
-
               }
-
             }
-
           );
-
         },
-
         {
           threshold: 0.12
         }
-
       );
-
-
     items.forEach(
-
       item => {
-
         observer.observe(
           item
         );
-
       }
-
     );
-
   }
-
-
   else {
-
-
     items.forEach(
-
       item => {
-
         item.classList.add(
           "visible"
         );
-
       }
-
     );
-
-  }
-
-</script>
-
-
-
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js").catch(() => {});
-    });
   }
 </script>
-
 </body>
 </html>
