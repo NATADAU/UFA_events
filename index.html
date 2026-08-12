@@ -250,6 +250,85 @@
     }
 
 
+    .nav-toggle {
+      display: none;
+
+      position: relative;
+      z-index: 2;
+
+      width: 44px;
+      height: 44px;
+      margin-right: -10px;
+
+      border: 0;
+      padding: 0;
+
+      background: transparent;
+      color: var(--ink);
+
+      cursor: pointer;
+    }
+
+
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      display: block;
+
+      width: 22px;
+      height: 2px;
+
+      background: currentColor;
+
+      transition:
+        transform 0.25s ease,
+        top 0.25s ease,
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+
+    .nav-toggle-bars {
+      position: relative;
+      margin: 0 auto;
+    }
+
+
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+
+    .nav-toggle-bars::before {
+      top: -7px;
+    }
+
+
+    .nav-toggle-bars::after {
+      top: 7px;
+    }
+
+
+    .topbar.nav-open .nav-toggle-bars {
+      background: transparent;
+    }
+
+
+    .topbar.nav-open .nav-toggle-bars::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+
+    .topbar.nav-open .nav-toggle-bars::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+
 
 
     /* ========================================================
@@ -1657,7 +1736,60 @@
       }
 
 
-      .nav a:not(:last-child) {
+      .nav-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+
+      .nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding:
+          8px
+          var(--pad)
+          16px;
+
+        border-bottom:
+          1px solid var(--line);
+
+        background:
+          rgba(238, 231, 216, 0.97);
+
+        backdrop-filter: blur(14px);
+      }
+
+
+      .topbar.nav-open .nav {
+        display: flex;
+      }
+
+
+      .nav a {
+        padding: 14px 0;
+
+        border-bottom:
+          1px solid var(--line);
+
+        font-size: 15px;
+      }
+
+
+      .nav a:last-child {
+        border-bottom: 0;
+      }
+
+
+      .nav a::after {
         display: none;
       }
 
@@ -1707,6 +1839,8 @@
 
       .section-head {
         display: block;
+
+        margin-bottom: 28px;
       }
 
 
@@ -1717,7 +1851,11 @@
 
       .section-title {
         font-size:
-          clamp(46px, 14vw, 78px);
+          clamp(34px, 10vw, 52px);
+
+        line-height: 1.05;
+
+        letter-spacing: -0.05em;
       }
 
 
@@ -1739,42 +1877,59 @@
 
 
       .photo img {
-        min-height: 320px;
+        height: auto;
+        min-height: 0;
       }
 
 
       .route-card {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+
+        min-height: 0;
 
         padding:
           28px 0;
       }
 
 
+      .route-number,
+      .route-name,
       .route-photo {
-        grid-column: 1;
-        grid-row: 1;
-
-        order: 0;
-      }
-
-
-      .route-photo img {
-        min-height: 280px;
+        grid-column: auto;
+        grid-row: auto;
       }
 
 
       .route-number {
-        grid-column: 1;
-        grid-row: 2;
+        order: 1;
+        padding-top: 0;
       }
 
 
       .route-name {
-        grid-column: 1;
-        grid-row: 3;
+        order: 2;
 
-        align-self: start;
+        align-self: stretch;
+
+        font-size:
+          clamp(28px, 9vw, 40px);
+      }
+
+
+      .route-photo {
+        order: 3;
+
+        width: 100%;
+        max-width: none;
+      }
+
+
+      .route-photo img {
+        height: auto;
+        min-height: 0;
       }
 
 
@@ -1790,31 +1945,56 @@
 
       .session,
       .session:nth-child(even) {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
 
-        gap: 14px;
+        gap: 12px;
       }
 
 
+      .session-number,
+      .session:nth-child(even) .session-number,
+      .session > div:not(.session-number),
+      .session:nth-child(even) > div:not(.session-number),
       .session-photo,
       .session:nth-child(even) .session-photo {
-        grid-column: 1;
-        grid-row: 1;
+        grid-column: auto;
+        grid-row: auto;
         max-width: none;
       }
 
 
       .session-number,
       .session:nth-child(even) .session-number {
-        grid-column: 1;
-        grid-row: 2;
+        order: 1;
+        padding-top: 0;
       }
 
 
       .session > div:not(.session-number),
       .session:nth-child(even) > div:not(.session-number) {
-        grid-column: 1;
-        grid-row: 3;
+        order: 2;
+      }
+
+
+      .session-photo,
+      .session:nth-child(even) .session-photo {
+        order: 3;
+        width: 100%;
+      }
+
+
+      .session-photo img {
+        height: auto;
+        width: 100%;
+      }
+
+
+      .session-title {
+        font-size:
+          clamp(24px, 7vw, 34px);
+
+        line-height: 1.1;
       }
 
 
@@ -1826,7 +2006,8 @@
 
 
       .seminar-photos img {
-        min-height: 280px;
+        height: auto;
+        min-height: 0;
       }
 
 
@@ -1839,7 +2020,8 @@
 
       .parents-photo-main img,
       .parents-photo-side img {
-        min-height: 360px;
+        height: auto;
+        min-height: 0;
       }
 
 
@@ -1856,7 +2038,8 @@
 
 
       .people-main img {
-        min-height: 360px;
+        height: auto;
+        min-height: 0;
       }
 
 
@@ -1878,7 +2061,8 @@
 
 
       .journal-photo img {
-        min-height: 380px;
+        height: auto;
+        min-height: 0;
       }
 
 
@@ -1949,7 +2133,22 @@
   </a>
 
 
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="site-nav"
+    aria-label="Открыть меню"
+  >
+    <span
+      class="nav-toggle-bars"
+      aria-hidden="true"
+    ></span>
+  </button>
+
+
   <nav
+    id="site-nav"
     class="nav"
     aria-label="Навигация"
   >
@@ -2175,11 +2374,11 @@
 
       много разговоров на месте,
 
-      большой семинар,
+      большой семинар —
 
-      встреча с представителями НКО
+      и ещё один отдельный разговор
 
-      и родителями.
+      в конце поездки.
 
       <br><br>
 
@@ -2209,7 +2408,7 @@
 
         <span>
 
-          учреждений
+          организаций
           в маршруте
           экспертных визитов
 
@@ -2239,12 +2438,12 @@
       <div class="intro-fact">
 
         <b>
-          1
+          +1
         </b>
 
         <span>
 
-          встреча
+          отдельная встреча
           с родителями
 
         </span>
@@ -2344,7 +2543,7 @@
 
     <h2 class="section-title">
 
-      Шесть ДСО.
+      Шесть точек.
 
       <br>
 
@@ -2442,7 +2641,7 @@
         Серафимовский
 
         <small>
-          ДДСО "Планета детства"
+          ДДСО
         </small>
 
       </h3>
@@ -2475,7 +2674,7 @@
         Верхнетроицкий
 
         <small>
-          ДСО "Вера"
+          дом социального обслуживания
         </small>
 
       </h3>
@@ -2508,7 +2707,7 @@
         Буздяк
 
         <small>
-          ДСО "Мизгел"
+          дом социального обслуживания
         </small>
 
       </h3>
@@ -3177,12 +3376,12 @@
 
     <h2 class="section-title">
 
-      Встреча.
+      С родителями.
 
       <br>
 
       <span class="serif italic">
-        с родителями.
+        Отдельно.
       </span>
 
     </h2>
@@ -3200,7 +3399,7 @@
 
       <br>
 
-      
+      Последний день поездки.
 
     </div>
 
@@ -3215,7 +3414,7 @@
 
       отдельный разговор
 
-      
+      с родителями.
 
     </p>
 
@@ -3356,7 +3555,7 @@
 
         На месте важны детали.
 
-        Но не менее важно
+        Но не меньше важно
 
         обсуждать увиденное вместе:
 
@@ -3418,12 +3617,12 @@
 
       <h2 class="section-title">
 
-        И ещё были
+        И ещё была
 
         <br>
 
         <span class="serif italic">
-          вечерние встречи, ужин, разговоры не о работе.
+          сама поездка.
         </span>
 
       </h2>
@@ -3449,7 +3648,7 @@
         >
 
       <figcaption>
-        между делом / просто вместе
+        между работой / просто вместе
       </figcaption>
 
     </figure>
@@ -3661,6 +3860,106 @@
     );
 
   }
+
+
+  const topbar =
+    document.querySelector(
+      ".topbar"
+    );
+
+  const navToggle =
+    document.querySelector(
+      ".nav-toggle"
+    );
+
+  const navLinks =
+    document.querySelectorAll(
+      ".nav a"
+    );
+
+
+  function setNavOpen(open) {
+
+    if (!topbar || !navToggle) {
+      return;
+    }
+
+    topbar.classList.toggle(
+      "nav-open",
+      open
+    );
+
+    navToggle.setAttribute(
+      "aria-expanded",
+      open ? "true" : "false"
+    );
+
+    navToggle.setAttribute(
+      "aria-label",
+      open
+        ? "Закрыть меню"
+        : "Открыть меню"
+    );
+
+  }
+
+
+  if (navToggle) {
+
+    navToggle.addEventListener(
+      "click",
+      () => {
+
+        setNavOpen(
+          !topbar.classList.contains(
+            "nav-open"
+          )
+        );
+
+      }
+    );
+
+  }
+
+
+  navLinks.forEach(
+
+    link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+          setNavOpen(false);
+        }
+      );
+
+    }
+
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Escape") {
+        setNavOpen(false);
+      }
+
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      if (window.innerWidth > 640) {
+        setNavOpen(false);
+      }
+
+    }
+  );
 
 </script>
 
