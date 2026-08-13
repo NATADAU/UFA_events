@@ -763,8 +763,9 @@
 
     .carousel-track {
       display: flex;
+      align-items: flex-end;
 
-      gap: 14px;
+      gap: 12px;
 
       overflow-x: auto;
       overscroll-behavior-x: contain;
@@ -788,8 +789,8 @@
     .carousel-slide {
       flex: 0 0 auto;
 
-      width: auto;
-      max-width: min(72vw, 720px);
+      width: fit-content;
+      max-width: min(70vw, 680px);
 
       margin: 0;
 
@@ -801,11 +802,10 @@
       display: block;
 
       width: auto;
-      max-width: 100%;
-      height: min(42vh, 400px);
+      height: auto;
 
-      object-fit: contain;
-      object-position: center;
+      max-width: min(70vw, 680px);
+      max-height: min(42vh, 400px);
     }
 
 
@@ -2186,14 +2186,15 @@
 
       .carousel-slide {
         flex: 0 0 auto;
+        width: fit-content;
         max-width: min(88vw, 420px);
       }
 
 
       .carousel-slide img {
         width: auto;
-        max-width: 100%;
         height: auto;
+        max-width: min(88vw, 420px);
         max-height: min(52vh, 360px);
       }
 
