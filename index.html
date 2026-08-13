@@ -39,9 +39,14 @@
   02-kumertau.jpg … 07-imenlek.jpg
   08-seminar-01.jpg … 13-seminar-06.jpg
   14-meeting.jpg, 15-team.jpg, 16-seminar-wide.jpg
-  17-place.jpg, 18-morning-evening.jpg,
-  19-team-life.jpg, 20-bashkortostan.jpg
   21-parents.jpg, 22-parents-02.jpg
+
+  После фактов (duo):
+  23-group.jpg          — группа
+  24-ufa-airport.jpg    — аэропорт Уфа
+
+  Карусель после «павлинов» (10 шт.):
+  25-carousel-01.jpg … 34-carousel-10.jpg
 
   Оригиналы лежат в папке «фото/».
   Каждое фото на странице используется один раз.
@@ -700,10 +705,10 @@
 
 
     /* ========================================================
-       TRIPTYCH
+       DUO (две фото после фактов)
        ======================================================== */
 
-    .triptych {
+    .duo {
       padding:
         0
         var(--pad)
@@ -712,7 +717,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(2, minmax(0, 1fr));
 
       gap:
         clamp(14px, 2vw, 28px);
@@ -721,7 +726,7 @@
     }
 
 
-    .triptych figure {
+    .duo figure {
       margin: 0;
     }
 
@@ -735,6 +740,138 @@
 
       object-fit: cover;
       object-position: center;
+    }
+
+
+
+    /* ========================================================
+       CAROUSEL
+       ======================================================== */
+
+    .carousel {
+      padding:
+        0
+        var(--pad)
+        clamp(48px, 7vw, 90px);
+    }
+
+
+    .carousel-shell {
+      position: relative;
+    }
+
+
+    .carousel-track {
+      display: flex;
+
+      gap: 14px;
+
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+
+      -webkit-overflow-scrolling: touch;
+
+      padding-bottom: 6px;
+
+      scrollbar-width: none;
+    }
+
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .carousel-slide {
+      flex:
+        0 0
+        min(78%, 520px);
+
+      margin: 0;
+
+      scroll-snap-align: start;
+    }
+
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+
+      aspect-ratio: 4 / 3;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+    .carousel-ui {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 16px;
+
+      margin-top: 18px;
+    }
+
+
+    .carousel-dots {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+
+      background: rgba(24, 24, 21, 0.22);
+
+      cursor: pointer;
+    }
+
+
+    .carousel-dot[aria-current="true"] {
+      background: var(--ink);
+    }
+
+
+    .carousel-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+
+    .carousel-btn {
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--ink);
+      border-radius: 0;
+
+      background: transparent;
+      color: var(--ink);
+
+      font-size: 18px;
+      line-height: 1;
+
+      cursor: pointer;
+    }
+
+
+    .carousel-btn:hover {
+      background: var(--ink);
+      color: var(--paper);
     }
 
 
@@ -1386,17 +1523,20 @@
     .journal-grid {
       display: grid;
 
-      grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(0, 0.95fr);
+      grid-template-columns: minmax(0, 1fr);
 
       gap:
         clamp(28px, 5vw, 72px);
 
-      align-items: center;
+      align-items: stretch;
 
       padding:
         0 var(--pad);
+    }
+
+
+    .journal-grid .journal-note {
+      max-width: 720px;
     }
 
 
@@ -1682,9 +1822,8 @@
     .focus-item.reveal:nth-child(6) { transition-delay: 0.42s; }
 
 
-    .triptych .photo.reveal:nth-child(1) { transition-delay: 0.04s; }
-    .triptych .photo.reveal:nth-child(2) { transition-delay: 0.14s; }
-    .triptych .photo.reveal:nth-child(3) { transition-delay: 0.24s; }
+    .duo .photo.reveal:nth-child(1) { transition-delay: 0.04s; }
+    .duo .photo.reveal:nth-child(2) { transition-delay: 0.14s; }
 
 
     .session.reveal:nth-child(odd) {
@@ -1767,14 +1906,9 @@
       }
 
 
-      .triptych {
+      .duo {
         grid-template-columns:
           1fr 1fr;
-      }
-
-
-      .triptych figure:nth-child(3) {
-        grid-column: 1 / -1;
       }
 
 
@@ -1843,12 +1977,50 @@
 
 
       .journal-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
 
       .closing-text {
         min-height: 60svh;
+      }
+
+
+      /* Android: плотный line-height рисует глифы поверх соседей */
+      .section-title {
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+      }
+
+
+      .route-name {
+        line-height: 1.08;
+      }
+
+
+      .focus-item h3 {
+        line-height: 1.12;
+      }
+
+
+      .session-title {
+        line-height: 1.12;
+      }
+
+
+      .lead {
+        line-height: 1.15;
+      }
+
+
+      .big-quote-text {
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+
+
+      .closing h2 {
+        line-height: 0.98;
       }
 
     }
@@ -1971,7 +2143,7 @@
       .section-head {
         display: block;
 
-        margin-bottom: 28px;
+        margin-bottom: 32px;
       }
 
 
@@ -1982,11 +2154,20 @@
 
       .section-title {
         font-size:
-          clamp(34px, 10vw, 52px);
+          clamp(32px, 9vw, 48px);
 
-        line-height: 1.05;
+        line-height: 1.18;
 
-        letter-spacing: -0.05em;
+        letter-spacing: -0.04em;
+
+        padding-bottom: 0.1em;
+      }
+
+
+      .lead {
+        line-height: 1.22;
+
+        letter-spacing: -0.03em;
       }
 
 
@@ -1995,15 +2176,21 @@
       }
 
 
-      .triptych {
+      .duo {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 18px;
       }
 
 
-      .triptych figure:nth-child(3) {
-        grid-column: auto;
+      .carousel-slide {
+        flex-basis: min(88%, 420px);
+      }
+
+
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
       }
 
 
@@ -2017,7 +2204,7 @@
         display: flex;
         flex-direction: column;
 
-        gap: 12px;
+        gap: 16px;
 
         min-height: 0;
 
@@ -2047,6 +2234,12 @@
 
         font-size:
           clamp(28px, 9vw, 40px);
+
+        line-height: 1.15;
+
+        letter-spacing: -0.04em;
+
+        padding-bottom: 0.06em;
       }
 
 
@@ -2070,7 +2263,21 @@
 
 
       .focus-item {
-        min-height: 230px;
+        min-height: 0;
+        gap: 18px;
+        padding: 22px;
+      }
+
+
+      .focus-item h3 {
+        line-height: 1.18;
+        letter-spacing: -0.03em;
+      }
+
+
+      .focus-item p {
+        margin-top: 12px;
+        line-height: 1.45;
       }
 
 
@@ -2079,7 +2286,7 @@
         display: flex;
         flex-direction: column;
 
-        gap: 12px;
+        gap: 16px;
       }
 
 
@@ -2125,14 +2332,18 @@
         font-size:
           clamp(24px, 7vw, 34px);
 
-        line-height: 1.1;
+        line-height: 1.2;
+
+        letter-spacing: -0.03em;
+
+        padding-bottom: 0.06em;
       }
 
 
       .seminar-photos {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 18px;
       }
 
 
@@ -2142,10 +2353,23 @@
       }
 
 
+      .big-quote {
+        padding:
+          clamp(64px, 14vw, 100px)
+          var(--pad);
+      }
+
+
+      .big-quote-text {
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+
+
       .parents-gallery {
         grid-template-columns: 1fr;
 
-        gap: 14px;
+        gap: 18px;
       }
 
 
@@ -2156,10 +2380,21 @@
       }
 
 
+      .parents-date,
+      .parents-text {
+        line-height: 1.2;
+      }
+
+
       .parents-line {
         grid-template-columns: 1fr;
 
         gap: 14px;
+      }
+
+
+      .parents-line p {
+        line-height: 1.2;
       }
 
 
@@ -2198,7 +2433,12 @@
 
 
       .journal-note {
-        padding: 22px;
+        padding: 24px;
+      }
+
+
+      .journal-note p {
+        line-height: 1.2;
       }
 
 
@@ -2209,6 +2449,18 @@
 
       .closing-text {
         min-height: 70svh;
+      }
+
+
+      .closing h2 {
+        font-size:
+          clamp(48px, 13vw, 88px);
+
+        line-height: 1.08;
+
+        letter-spacing: -0.05em;
+
+        padding-bottom: 0.08em;
       }
 
 
@@ -2244,6 +2496,11 @@
 
       .marquee-track {
         animation: none;
+      }
+
+
+      .carousel-track {
+        scroll-behavior: auto;
       }
 
 
@@ -2632,25 +2889,25 @@
 
 
 <!-- ======================================================
-     ATMOSPHERE
+     DUO — группа + аэропорт Уфа
      ====================================================== -->
 
-<div class="triptych">
+<div class="duo">
 
 
   <figure class="photo reveal reveal-media">
 
             <img
-          src="17-place.jpg"
+          src="23-group.jpg"
           width="1200"
           height="1600"
-          alt="Место проживания"
+          alt="Группа"
           loading="lazy"
           decoding="async"
         >
 
     <figcaption>
-      место / после работы
+      группа
     </figcaption>
 
   </figure>
@@ -2660,35 +2917,16 @@
   <figure class="photo reveal reveal-media">
 
             <img
-          src="18-morning-evening.jpg"
-          width="1050"
-          height="1400"
-          alt="Утро или вечер"
+          src="24-ufa-airport.jpg"
+          width="1600"
+          height="1200"
+          alt="Аэропорт Уфа"
           loading="lazy"
           decoding="async"
         >
 
     <figcaption>
-      местные красоты
-    </figcaption>
-
-  </figure>
-
-
-
-  <figure class="photo reveal reveal-media">
-
-            <img
-          src="20-bashkortostan.jpg"
-          width="1400"
-          height="1050"
-          alt="Башкортостан"
-          loading="lazy"
-          decoding="async"
-        >
-
-    <figcaption>
-      по дороге
+      аэропорт / Уфа
     </figcaption>
 
   </figure>
@@ -3806,26 +4044,102 @@
 
 
 
-  <div class="journal-grid">
+  <div
+    class="carousel reveal"
+    data-carousel
+  >
+
+    <div class="carousel-shell">
+
+      <div
+        class="carousel-track"
+        data-carousel-track
+        tabindex="0"
+        aria-label="Карусель фотографий поездки"
+      >
+
+        <figure class="carousel-slide">
+          <img src="25-carousel-01.jpg" width="1600" height="1200" alt="Поездка 1" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="26-carousel-02.jpg" width="1600" height="1200" alt="Поездка 2" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="27-carousel-03.jpg" width="1600" height="1200" alt="Поездка 3" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="28-carousel-04.jpg" width="1600" height="1200" alt="Поездка 4" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="29-carousel-05.jpg" width="1600" height="1200" alt="Поездка 5" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="30-carousel-06.jpg" width="1600" height="1200" alt="Поездка 6" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="31-carousel-07.jpg" width="1600" height="1200" alt="Поездка 7" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="32-carousel-08.jpg" width="1600" height="1200" alt="Поездка 8" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="33-carousel-09.jpg" width="1600" height="1200" alt="Поездка 9" loading="lazy" decoding="async">
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="34-carousel-10.jpg" width="1600" height="1200" alt="Поездка 10" loading="lazy" decoding="async">
+        </figure>
+
+      </div>
+
+    </div>
 
 
-    <figure class="journal-photo reveal reveal-media">
+    <div class="carousel-ui">
 
-              <img
-          src="19-team-life.jpg"
-          width="1050"
-          height="1400"
-          alt="Команда между рабочими событиями"
-          loading="lazy"
-          decoding="async"
+      <div
+        class="carousel-dots"
+        data-carousel-dots
+        aria-label="Слайды"
+      ></div>
+
+      <div class="carousel-nav">
+
+        <button
+          class="carousel-btn"
+          type="button"
+          data-carousel-prev
+          aria-label="Предыдущее фото"
         >
+          ←
+        </button>
 
-      <figcaption>
-        между работой / просто вместе
-      </figcaption>
+        <button
+          class="carousel-btn"
+          type="button"
+          data-carousel-next
+          aria-label="Следующее фото"
+        >
+          →
+        </button>
 
-    </figure>
+      </div>
 
+    </div>
+
+  </div>
+
+
+
+  <div class="journal-grid">
 
     <div class="journal-note reveal">
 
@@ -4140,6 +4454,169 @@
 
     }
   );
+
+
+  document.querySelectorAll(
+    "[data-carousel]"
+  ).forEach((carousel) => {
+
+    const track =
+      carousel.querySelector(
+        "[data-carousel-track]"
+      );
+
+    const dotsWrap =
+      carousel.querySelector(
+        "[data-carousel-dots]"
+      );
+
+    const prevBtn =
+      carousel.querySelector(
+        "[data-carousel-prev]"
+      );
+
+    const nextBtn =
+      carousel.querySelector(
+        "[data-carousel-next]"
+      );
+
+    if (!track || !dotsWrap) {
+      return;
+    }
+
+    const slides = Array.from(
+      track.querySelectorAll(
+        ".carousel-slide"
+      )
+    );
+
+    const dots = slides.map(
+      (_slide, index) => {
+
+        const dot =
+          document.createElement(
+            "button"
+          );
+
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute(
+          "aria-label",
+          "Фото " + (index + 1)
+        );
+
+        dot.addEventListener(
+          "click",
+          () => {
+            slides[index].scrollIntoView({
+              behavior: reduceMotion
+                ? "auto"
+                : "smooth",
+              inline: "start",
+              block: "nearest"
+            });
+          }
+        );
+
+        dotsWrap.appendChild(dot);
+        return dot;
+      }
+    );
+
+
+    function currentIndex() {
+
+      const left = track.scrollLeft;
+      let best = 0;
+      let bestDist = Infinity;
+
+      slides.forEach((slide, index) => {
+
+        const dist = Math.abs(
+          slide.offsetLeft - left
+        );
+
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = index;
+        }
+
+      });
+
+      return best;
+    }
+
+
+    function syncDots() {
+
+      const active = currentIndex();
+
+      dots.forEach((dot, index) => {
+
+        if (index === active) {
+          dot.setAttribute(
+            "aria-current",
+            "true"
+          );
+        } else {
+          dot.removeAttribute(
+            "aria-current"
+          );
+        }
+
+      });
+
+    }
+
+
+    function go(delta) {
+
+      const next = Math.max(
+        0,
+        Math.min(
+          slides.length - 1,
+          currentIndex() + delta
+        )
+      );
+
+      slides[next].scrollIntoView({
+        behavior: reduceMotion
+          ? "auto"
+          : "smooth",
+        inline: "start",
+        block: "nearest"
+      });
+
+    }
+
+
+    if (prevBtn) {
+      prevBtn.addEventListener(
+        "click",
+        () => go(-1)
+      );
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener(
+        "click",
+        () => go(1)
+      );
+    }
+
+    track.addEventListener(
+      "scroll",
+      () => {
+        window.requestAnimationFrame(
+          syncDots
+        );
+      },
+      { passive: true }
+    );
+
+    syncDots();
+
+  });
 
 </script>
 
