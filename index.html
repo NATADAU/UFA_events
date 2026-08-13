@@ -786,25 +786,23 @@
 
 
     .carousel-slide {
-      flex:
-        0 0
-        min(58%, 640px);
+      flex: 0 0 auto;
+
+      width: auto;
+      max-width: min(72vw, 720px);
 
       margin: 0;
 
       scroll-snap-align: start;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
 
     .carousel-slide img {
+      display: block;
+
       width: auto;
       max-width: 100%;
-      height: auto;
-      max-height: min(42vh, 400px);
+      height: min(42vh, 400px);
 
       object-fit: contain;
       object-position: center;
@@ -2187,13 +2185,16 @@
 
 
       .carousel-slide {
-        flex-basis: min(88%, 420px);
+        flex: 0 0 auto;
+        max-width: min(88vw, 420px);
       }
 
 
       .carousel-slide img {
-        max-height: none;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: min(52vh, 360px);
       }
 
 
