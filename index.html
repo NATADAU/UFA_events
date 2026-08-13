@@ -788,17 +788,23 @@
     .carousel-slide {
       flex:
         0 0
-        min(72%, 820px);
+        min(58%, 640px);
 
       margin: 0;
 
       scroll-snap-align: start;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 
     .carousel-slide img {
-      width: 100%;
+      width: auto;
+      max-width: 100%;
       height: auto;
+      max-height: min(42vh, 400px);
 
       object-fit: contain;
       object-position: center;
@@ -2182,6 +2188,12 @@
 
       .carousel-slide {
         flex-basis: min(88%, 420px);
+      }
+
+
+      .carousel-slide img {
+        max-height: none;
+        width: 100%;
       }
 
 
@@ -4129,32 +4141,6 @@
         </button>
 
       </div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="journal-grid">
-
-    <div class="journal-note reveal">
-
-      <p>
-
-        Дорога,
-
-        разговоры после визитов,
-
-        красивые места
-
-        и короткие паузы —
-
-        тоже часть
-
-        этой истории.
-
-      </p>
 
     </div>
 
